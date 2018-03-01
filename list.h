@@ -23,3 +23,5 @@ PNODE findOne(PNODE p,int data);
 int change(PNODE p,int data,int data1);
 
 int deleteMidList(PNODE p,int n);
+
+int insertMidList(PNODE p,int data,int n);

@@ -121,3 +121,14 @@ int deleteMidList(PNODE p, int n) {
 	tmp->next = ptmp;
 	return --(p->data);
 }
+
+int insertMidList(PNODE p, int data, int n) {
+	PNODE tmp = p;
+	for (int i = 0; i < n - 1;i++) {
+		tmp = tmp->next;
+	}
+	PNODE pNew = createNode(data);
+	pNew->next = tmp->next;
+	tmp->next = pNew;
+	return ++(p->data);
+}
