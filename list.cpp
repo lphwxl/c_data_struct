@@ -1,5 +1,4 @@
 #include "stdafx.h"
-#include "list.h"  
 
 PNODE init() {
 	PNODE head = (PNODE)malloc(sizeof(NODE));
