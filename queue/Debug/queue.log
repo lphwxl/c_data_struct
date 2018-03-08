@@ -1,0 +1,7 @@
+﻿D:\vs2.17\Common7\IDE\VC\VCTargets\Microsoft.CppClean.targets(76,5): warning : 对路径“f:\ccode\list\list\debug\queue.exe”的访问被拒绝。
+  stdafx.cpp
+  queue.cpp
+  qu.cpp
+  list.cpp
+  正在生成代码...
+LINK : fatal error LNK1104: 无法打开文件“F:\Ccode\list\list\Debug\queue.exe”
