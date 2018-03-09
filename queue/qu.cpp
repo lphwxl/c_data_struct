@@ -1,6 +1,11 @@
 #include "stdafx.h"
 
-
+PNODE createNode(int data) {
+	PNODE p = (PNODE)malloc(sizeof(NODE));
+	p->data = data;
+	p->next = nullptr;
+	return p;
+}
 //初始化
 void initQueue(PQUEUE p) {
 	p->top = p->bottom = nullptr;
@@ -34,8 +39,7 @@ int push(PQUEUE p, int data) {
 		p->bottom = node;
 	}
 	printf("%p\n", p->bottom);
-	free(node);
-	node = nullptr;
+	
 	return 1;
 }
 
@@ -45,18 +49,24 @@ int pop(PQUEUE p) {
 		printf("队列为空\n");
 		return 0;
 	}
-	PNODE node = createNode(0);
+	PNODE node = nullptr;
 	int tmp = p->top->data;
-	if (!p->top->next) {
+
+	//int da = qu->front->data;
+	//PNODE P = qu->front->next;
+	//free(qu->front);  先删除在判断----代码少
+	//qu->front = P;
+	if (!p->top->next) {  //先判断再删除
+		free(p->top);
 		p->top = p->bottom = nullptr;
 	}
 	else {
-		node->next = p->top->next;
-		p->top = node->next;
-		free(node);
+		node = p->top->next;
+		free(p->top);
+		p->top = node;
 		node = nullptr;
+		printf("00\n");
 	}
-	free(p->top);
 	return tmp;
 }
 
@@ -64,10 +74,8 @@ void showQueue(PQUEUE p) {
 	if (!isEmpty(p)) {
 		printf("空\n");
 	}
-
 	while (p->top != nullptr) {
-		printf(" %d -> ",p->top->data);
-		printf("%p\n", p->top->next);
+		printf("%d -> ",p->top->data);//
 		p->top = p->top->next;
 	}
 	printf("\n");

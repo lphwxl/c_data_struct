@@ -5,7 +5,16 @@ typedef struct queue
 	struct node *top,*bottom;
 }QUEUE,*PQUEUE;
 
+typedef struct node
+{
+	int data;
+	struct node *next;
 
+}NODE,*PNODE;
+
+
+//创建节点
+PNODE createNode(int data);
 //初始化
 void initQueue(PQUEUE p);
 

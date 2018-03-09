@@ -152,7 +152,6 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\singlelist\list.cpp" />
     <ClCompile Include="qu.cpp" />
     <ClCompile Include="queue.cpp" />
     <ClCompile Include="stdafx.cpp">
